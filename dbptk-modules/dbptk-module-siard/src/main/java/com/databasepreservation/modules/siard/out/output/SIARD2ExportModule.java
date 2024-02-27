@@ -16,12 +16,14 @@ import com.databasepreservation.modules.siard.common.SIARDArchiveContainer;
 import com.databasepreservation.modules.siard.common.path.MetadataPathStrategy;
 import com.databasepreservation.modules.siard.common.path.SIARD2MetadataPathStrategy;
 import com.databasepreservation.modules.siard.constants.SIARDConstants;
+import com.databasepreservation.modules.siard.in.metadata.SIARD22MetadataImportStrategy;
 import com.databasepreservation.modules.siard.out.content.ContentExportStrategy;
 import com.databasepreservation.modules.siard.out.content.SIARD2ContentExportStrategy;
 import com.databasepreservation.modules.siard.out.content.SIARD2ContentWithExternalLobsExportStrategy;
 import com.databasepreservation.modules.siard.out.metadata.MetadataExportStrategy;
 import com.databasepreservation.modules.siard.out.metadata.SIARD20MetadataExportStrategy;
 import com.databasepreservation.modules.siard.out.metadata.SIARD21MetadataExportStrategy;
+import com.databasepreservation.modules.siard.out.metadata.SIARD22MetadataExportStrategy;
 import com.databasepreservation.modules.siard.out.path.SIARD2ContentPathExportStrategy;
 import com.databasepreservation.modules.siard.out.path.SIARD2ContentWithExternalLobsPathExportStrategy;
 import com.databasepreservation.modules.siard.out.write.FolderWriteStrategy;
@@ -63,6 +65,9 @@ public class SIARD2ExportModule {
       case V2_1:
         metadataStrategy = new SIARD21MetadataExportStrategy(metadataPathStrategy, contentPathStrategy, false);
         break;
+      case V2_2:
+        metadataStrategy = new SIARD22MetadataExportStrategy(metadataPathStrategy, contentPathStrategy, false);
+        break;
     }
 
     contentStrategy = new SIARD2ContentExportStrategy(contentPathStrategy, writeStrategy, mainContainer, prettyXML,
@@ -94,6 +99,9 @@ public class SIARD2ExportModule {
         break;
       case V2_1:
         metadataStrategy = new SIARD21MetadataExportStrategy(metadataPathStrategy, contentPathStrategy, true);
+        break;
+      case V2_2:
+        metadataStrategy = new SIARD22MetadataExportStrategy(metadataPathStrategy, contentPathStrategy, false);
         break;
     }
 

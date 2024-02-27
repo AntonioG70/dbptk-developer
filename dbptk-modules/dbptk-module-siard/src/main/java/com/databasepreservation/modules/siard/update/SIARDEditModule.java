@@ -24,6 +24,8 @@ import javax.xml.xpath.XPathExpression;
 import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
 
+import com.databasepreservation.modules.siard.in.metadata.SIARD22MetadataImportStrategy;
+import com.databasepreservation.modules.siard.out.metadata.SIARD22MetadataExportStrategy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
@@ -106,6 +108,9 @@ public class SIARDEditModule implements EditModule {
       case V2_1:
         metadataImportStrategy = new SIARD21MetadataImportStrategy(metadataPathStrategy, contentPathStrategy);
         break;
+      case V2_2:
+        metadataImportStrategy = new SIARD22MetadataImportStrategy(metadataPathStrategy, contentPathStrategy);
+        break;
       case V1_0:
         metadataImportStrategy = new SIARD1MetadataImportStrategy(new SIARD1MetadataPathStrategy(),
           new SIARD1ContentPathImportStrategy());
@@ -176,6 +181,12 @@ public class SIARDEditModule implements EditModule {
           contentPathExportStrategy, false);
         metadata21ExportStrategy.setOnceReporter(reporter);
         metadata21ExportStrategy.updateMetadataXML(dbStructure, mainContainer, updateStrategy);
+        break;
+      case V2_2:
+        SIARD22MetadataExportStrategy metadata22ExportStrategy = new SIARD22MetadataExportStrategy(metadataPathStrategy,
+          contentPathExportStrategy, false);
+        metadata22ExportStrategy.setOnceReporter(reporter);
+        metadata22ExportStrategy.updateMetadataXML(dbStructure, mainContainer, updateStrategy);
         break;
       case V1_0:
         SIARD1MetadataExportStrategy metadata1ExportStrategy = new SIARD1MetadataExportStrategy(

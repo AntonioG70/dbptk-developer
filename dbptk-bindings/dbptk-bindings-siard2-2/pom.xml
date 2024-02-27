@@ -2,7 +2,7 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <name>dbptk-bindings-siard2-0</name>
+    <name>dbptk-bindings-siard2-2</name>
     <dependencies>
         <dependency>
             <groupId>jakarta.xml.bind</groupId>
@@ -12,8 +12,8 @@
         </dependency>
     </dependencies>
     <groupId>com.databasepreservation</groupId>
-    <artifactId>dbptk-bindings-siard2-0</artifactId>
-    <version>1.5.1</version>
+    <artifactId>dbptk-bindings-siard2-2</artifactId>
+    <version>2.2.0</version>
     <parent>
         <groupId>com.databasepreservation</groupId>
         <artifactId>dbptk-bindings</artifactId>
@@ -21,7 +21,7 @@
         <relativePath>..</relativePath>
     </parent>
     <properties>
-        <packagename>siard_2_0</packagename>
+        <packagename>siard_2_2</packagename>
     </properties>
     <build>
         <plugins>

@@ -10,6 +10,7 @@ package com.databasepreservation.modules.siard.in.input;
 import java.nio.file.Path;
 import java.util.Map;
 
+import com.databasepreservation.modules.siard.in.metadata.SIARD22MetadataImportStrategy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -92,6 +93,9 @@ public class SIARD2ImportModule {
         break;
       case V2_1:
         metadataStrategy = new SIARD21MetadataImportStrategy(metadataPathStrategy, contentPathStrategy);
+        break;
+      case V2_2:
+        metadataStrategy = new SIARD22MetadataImportStrategy(metadataPathStrategy, contentPathStrategy);
         break;
       default:
         metadataStrategy = null;
