@@ -1,0 +1,22 @@
+<jaxb:bindings xmlns:jaxb="https://jakarta.ee/xml/ns/jaxb" xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" version="3.0">
+
+    <!--jaxb:bindings schemaLocation="../../schema/docIndex.xsd" >
+        <jaxb:bindings node="//xs:simpleType[@name='documentIDType']">
+            <jaxb:property name="docIndexDocumentIDType"/>
+        </jaxb:bindings>
+    </jaxb:bindings-->
+
+    <!--jaxb:bindings schemaLocation="../../schema/contextDocumentationIndex.xsd" >
+        <jaxb:bindings node="//xs:simpleType[@name='documentIDType']">
+            <jaxb:property name="contextDocumentationIndexDocumentIDType"/>
+        </jaxb:bindings>
+    </jaxb:bindings-->
+
+    <jaxb:bindings schemaLocation="../../schema/archiveIndex.xsd" >
+        <jaxb:bindings node="//xs:simpleType[@name='nonEmptyTextType']">
+            <jaxb:property name="archiveIndexNonEmptyTextType"/>
+        </jaxb:bindings>
+    </jaxb:bindings>
+
+</jaxb:bindings>
