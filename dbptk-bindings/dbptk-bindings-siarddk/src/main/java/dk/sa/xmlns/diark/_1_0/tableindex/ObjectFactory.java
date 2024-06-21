@@ -14,7 +14,7 @@
 
 package dk.sa.xmlns.diark._1_0.tableindex;
 
-import jakarta.xml.bind.annotation.XmlRegistry;
+import javax.xml.bind.annotation.XmlRegistry;
 
 /**
  * This object contains factory methods for each Java content interface and Java
